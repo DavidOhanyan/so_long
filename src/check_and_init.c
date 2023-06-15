@@ -6,7 +6,7 @@
 /*   By: dohanyan <dohanyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:17:25 by dohanyan          #+#    #+#             */
-/*   Updated: 2023/06/14 20:41:10 by dohanyan         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:27:14 by dohanyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*check_argv(char *argv)
 	{
 		if (fd == -1)
 		{
-			write(1, "ERROR: INVALID FILE!\n", 21);
+			write(1, "ERROR: INVALID FIEL!\n", 21);
 			exit(0);
 		}
 		for_get = get_next_line(fd);
@@ -62,8 +62,8 @@ void	parce(t_game *game, char **test_map, char *line)
 
 void	for_hooks(t_game *game)
 {	
-	mlx_hook(game->mlx.win, 2, 1L<<0, &keypress, game);
+	mlx_hook(game->mlx.win, 2, 0, &keypress, game);
 	mlx_loop_hook(game->mlx.ptr, &frame, game);
-	mlx_hook(game->mlx.win, 17, 1L<<15, &ft_close, game);
+	mlx_hook(game->mlx.win, 17, 0, &ft_close, game);
 	mlx_loop(game->mlx.ptr);
 }

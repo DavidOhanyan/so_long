@@ -6,7 +6,7 @@
 /*   By: dohanyan <dohanyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 19:06:32 by dohanyan          #+#    #+#             */
-/*   Updated: 2023/04/14 23:49:20 by dohanyan         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:29:52 by dohanyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	init_game(t_game *game, char **test_map, char *line)
 	ft_free(test_map, game->mlx.screen.y);
 	game->image.score = count_coins(game->map);
 	game->mlx.ptr = mlx_init();
-	game->mlx.win = mlx_new_window(game->mlx.ptr,game->mlx.screen.x * LENGHT, game->mlx.screen.y * WIDTH, "so_long");
+	game->mlx.win = mlx_new_window(game->mlx.ptr,
+			game->mlx.screen.x * LENGHT, game->mlx.screen.y * WIDTH, "so_long");
 	fill_image(game);
 }

@@ -9,14 +9,13 @@ INCS			= -Iincludes -I$(MLXDIR)
 CC				= cc 
 LINKERS			= -L$(MLXDIR) -lmlx -lXext -lX11
 RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror #-fsanitize=address -g
+CFLAGS			= -Wall -Wextra -Werror -fsanitize=address -g
 MK				= mkdir -p
 
 ifeq ($(shell uname -s), Darwin)
 	LINKERS	= -L$(MLXDIR) -lmlx -framework  OpenGL -framework AppKit
 	MLXDIR	=	minilibx-mac
 endif
-
 
 all:			mlx $(OBJ_DIR) $(NAME)
 

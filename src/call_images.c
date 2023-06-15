@@ -6,7 +6,7 @@
 /*   By: dohanyan <dohanyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:50:24 by dohanyan          #+#    #+#             */
-/*   Updated: 2023/05/09 15:39:27 by dohanyan         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:56:26 by dohanyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void	show_images(t_game *game, void *rem)
 		y = 0;
 		while (game->map[x][y])
 		{
-			mlx_put_image_to_window(game->mlx.ptr, game->mlx.win,game->image.floor, y * WIDTH, x * LENGHT);
+			mlx_put_image_to_window(game->mlx.ptr, game->mlx.win,
+				game->image.floor, y * WIDTH, x * LENGHT);
 			if (game->map[x][y] == 'C' || game->map[x][y] == 'X' ||
 				game->map[x][y] == '1')
 				show_images3(game, x, y, rem);
