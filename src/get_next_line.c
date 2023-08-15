@@ -6,7 +6,7 @@
 /*   By: dohanyan <dohanyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 20:55:11 by dohanyan          #+#    #+#             */
-/*   Updated: 2023/06/15 16:02:29 by dohanyan         ###   ########.fr       */
+/*   Updated: 2023/08/15 15:41:20 by dohanyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ char	*ft_parc_buf(char *buf)
 	int		i;
 	char	*rem;
 
-	i = 0;
-	j = 0;
-	if (buf == 0 || *buf == 0)
-		return (0);
+	i = ((j = 0));
+	if (buf == NULL)
+		return (NULL);
 	if (ft_strchr(buf, '\n') != NULL)
 	{
 		while (buf[i] != '\n')
@@ -35,9 +34,10 @@ char	*ft_parc_buf(char *buf)
 			rem[j++] = buf[i++];
 		rem[j] = '\0';
 		free(buf);
-		buf = 0;
 		return (rem);
 	}
+	else
+		free(buf);
 	return (0);
 }
 
@@ -48,12 +48,8 @@ char	*ft_check(char *buf, char *result, int i)
 		result[i] = '\n';
 		result[i + 1] = '\0';
 	}
-	else
-	{
+	else if (buf[i] == '\0')
 		result[i] = '\0';
-		free(buf);
-		buf = 0;
-	}
 	return (result);
 }
 
@@ -63,12 +59,8 @@ char	*ft_parc1(char *buf)
 	char	*result;
 
 	i = 0;
-	if (buf == 0 || *buf == 0)
-	{
-		if (buf)
-			free(buf);
-		return (0);
-	}
+	if (buf == NULL || *buf == '\0')
+		return (NULL);
 	while (buf[i] != '\n' && buf[i] != '\0')
 		i++;
 	if (buf[i] == '\n')
