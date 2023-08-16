@@ -6,7 +6,7 @@
 /*   By: dohanyan <dohanyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:04:51 by dohanyan          #+#    #+#             */
-/*   Updated: 2023/03/30 18:52:29 by dohanyan         ###   ########.fr       */
+/*   Updated: 2023/08/16 18:48:22 by dohanyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,9 @@ void	ft_num_error2(char **map)
 
 void	ft_num_error1(char **map)
 {
-	int	siz;
 	int	i;
 	int	j;
 
-	siz = 0;
 	i = 0;
 	j = 0;
 	while (map[i][j] != '\0')
